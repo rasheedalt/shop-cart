@@ -42,8 +42,7 @@ class AuthController extends Controller
     }
 
     public function register(Request $request){
-        $validator =
-        Validator::make($request->all(),[
+        $validator = Validator::make($request->all(),[
             'name' => 'required',
             'email' => 'required | unique:users',
             'password' => 'required',
@@ -51,17 +50,12 @@ class AuthController extends Controller
         ]);
         if($validator->fails()){
             return response()->json(['error' => $validator->errors()], 401);
-        }
+            }
          $input = $request->all();
          $input['password'] = hash::make($input['password']);
-         //return $input['password'];
-        //  $user = new User;
-        //  $user->email = $input['email'];
-        //  $user->password = $input['password'];
-        //  $user->name = $input['name'];
-       $user =  User::create($input);
-         return response()->json([$user], 200);
-        
+            $user =  User::create($input);
+            return response()->json([$user], 200);
+            
     }
 
     public function now(Request $request){
