@@ -6,7 +6,7 @@
         <ul class="nav ml-auto">
             <li class="nav-item px-3  dropdown">
               <a href="#" class="nav-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-shopping-cart fa-lg text-dark"></i><small class="text-danger float-right">{{cartItemNumber}}3</small>
+                <i class="fa fa-shopping-cart fa-lg text-dark"></i>
                 </a>
                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                      <div v-for="item in cartItems" :key="item.id">

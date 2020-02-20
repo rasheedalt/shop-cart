@@ -2031,6 +2031,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['title', 'desc', 'price'],
   mounted: function mounted() {
@@ -37581,12 +37582,24 @@ var render = function() {
         _vm._v(" "),
         _c("p", { staticClass: "card-text text-center" }, [
           _vm._v(_vm._s(_vm.price) + " ")
-        ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "btn btn-primary text-center" }, [
+      _c("i", { staticClass: "fa fa-shopping-cart" }),
+      _vm._v(" Add To Cart")
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37619,25 +37632,7 @@ var render = function() {
         _vm._v(" "),
         _c("ul", { staticClass: "nav ml-auto" }, [
           _c("li", { staticClass: "nav-item px-3  dropdown" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                attrs: {
-                  href: "#",
-                  id: "navbarDropdownMenuLink",
-                  "data-toggle": "dropdown",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false"
-                }
-              },
-              [
-                _c("i", { staticClass: "fa fa-shopping-cart fa-lg text-dark" }),
-                _c("small", { staticClass: "text-danger float-right" }, [
-                  _vm._v(_vm._s(_vm.cartItemNumber) + "3")
-                ])
-              ]
-            ),
+            _vm._m(0),
             _vm._v(" "),
             _c(
               "div",
@@ -37678,7 +37673,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(1)
         ])
       ]
     ),
@@ -37701,7 +37696,7 @@ var render = function() {
           { staticClass: "modal-dialog", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(1),
+              _vm._m(2),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("form", [
@@ -37779,7 +37774,7 @@ var render = function() {
                     })
                   ]),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _vm._m(3),
                   _vm._v(" "),
                   _c(
                     "button",
@@ -37804,6 +37799,25 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link",
+        attrs: {
+          href: "#",
+          id: "navbarDropdownMenuLink",
+          "data-toggle": "dropdown",
+          "aria-haspopup": "true",
+          "aria-expanded": "false"
+        }
+      },
+      [_c("i", { staticClass: "fa fa-shopping-cart fa-lg text-dark" })]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -50111,8 +50125,8 @@ __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //Vue.use(VueRouter);
 
 Vue.use(axios__WEBPACK_IMPORTED_MODULE_0___default.a);
-axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = 'https://shope-api.herokuapp.com/api';
-axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common['Authorization'] = '';
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.baseURL = 'https://shope-api.herokuapp.com/api'; //axios.defaults.headers.common['Authorization'] = '';
+
 
 Vue.component('App', _App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]); // const router = new VueRouter({
 //     mode: 'history',
