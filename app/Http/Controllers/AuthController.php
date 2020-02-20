@@ -20,25 +20,16 @@ class AuthController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Invalid Email or Password',
+                'user'    =>  JWTAuth::user()
             ], 401);
         }
 
         return response()->json([
             'success' => true,
             'token' => $token,
-        ]);
-        // if(Auth::attempt(['email'=> $request->email,  
-        //                 'password' => $request->password ])){
-        //     $user = Auth::user();
-        //     $token = Str::random(60);
-        //     $user->api_token = $token;
-        //     $user->save();
-        //    //dd($success['token'] = $user->createToken('MyApp')->accessToken);
-        //     return response()->json(['token' => $token, 'user' => $user], 200);
-        // }else{
-        //     return response()->json(['error' => 'Unauthorised'], 404);
 
-        // }
+        ]);
+        
     }
 
     public function register(Request $request){
