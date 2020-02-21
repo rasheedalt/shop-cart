@@ -63,7 +63,7 @@
 
 <script>
     export default {
-       props:['cartItemNumber', 'CartItems'],
+       props:['cartItems'],
        data(){
            return{
                email: '',

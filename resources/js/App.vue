@@ -1,9 +1,9 @@
 <template>
     <div >
-        <HeaderComponent />
+        <HeaderComponent :cartItems="items" />
 
         <div class="row mt-3 justify-content-center mx-1">
-            <div class="col-md-3 m-1" v-for="product in Products" :key="product.id">
+            <div class="col-md-3 m-1" v-for="product in products" :key="product.id">
                 <CardComponent :title="product.title" :desc="product.description" :price="product.price" />
             </div>
             <div class="col-md-3 m-1">
@@ -36,12 +36,14 @@
     },
         mounted() {
             this.getProducts();
+            console.log(this.products)
         },
         data(){
             return{
                 cart: '',
                 user: '',
                 products: '',
+                items: ''
             }
         },
         computed:{

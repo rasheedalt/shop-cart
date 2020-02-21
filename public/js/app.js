@@ -1946,12 +1946,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getProducts();
+    console.log(this.products);
   },
   data: function data() {
     return {
       cart: '',
       user: '',
-      products: ''
+      products: '',
+      items: ''
     };
   },
   computed: {
@@ -2114,7 +2116,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['cartItemNumber', 'CartItems'],
+  props: ['cartItems'],
   data: function data() {
     return {
       email: '',
@@ -37505,13 +37507,13 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("HeaderComponent"),
+      _c("HeaderComponent", { attrs: { cartItems: _vm.items } }),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "row mt-3 justify-content-center mx-1" },
         [
-          _vm._l(_vm.Products, function(product) {
+          _vm._l(_vm.products, function(product) {
             return _c(
               "div",
               { key: product.id, staticClass: "col-md-3 m-1" },
