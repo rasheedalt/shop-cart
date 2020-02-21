@@ -4,22 +4,10 @@
 
         <div class="row mt-3 justify-content-center mx-1">
             <div class="col-md-3 m-1" v-for="product in products" :key="product.id">
-                <CardComponent :title="product.title" :desc="product.description" :price="product.price" />
-            </div>
-            <div class="col-md-3 m-1">
-                <CardComponent />
-            </div>
-            <div class="col-md-3 m-1">
-                <CardComponent />
-            </div>
-            <div class="col-md-3 m-1">
-                <CardComponent />
-            </div>
-            <div class="col-md-3 m-1">
-                <CardComponent />
-            </div>
-            <div class="col-md-3 m-1">
-                <CardComponent />
+                <CardComponent :title="product.title" 
+                                :desc="product.description" 
+                                :image_url="product.image_url"
+                                :price="product.price" />
             </div>
         </div>
     </div>

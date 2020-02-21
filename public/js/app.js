@@ -1925,18 +1925,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2033,9 +2021,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['title', 'desc', 'price'],
+  props: ['title', 'desc', 'price', 'image_url'],
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -37512,35 +37499,24 @@ var render = function() {
       _c(
         "div",
         { staticClass: "row mt-3 justify-content-center mx-1" },
-        [
-          _vm._l(_vm.products, function(product) {
-            return _c(
-              "div",
-              { key: product.id, staticClass: "col-md-3 m-1" },
-              [
-                _c("CardComponent", {
-                  attrs: {
-                    title: product.title,
-                    desc: product.description,
-                    price: product.price
-                  }
-                })
-              ],
-              1
-            )
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 m-1" }, [_c("CardComponent")], 1),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 m-1" }, [_c("CardComponent")], 1),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 m-1" }, [_c("CardComponent")], 1),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 m-1" }, [_c("CardComponent")], 1),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-3 m-1" }, [_c("CardComponent")], 1)
-        ],
-        2
+        _vm._l(_vm.products, function(product) {
+          return _c(
+            "div",
+            { key: product.id, staticClass: "col-md-3 m-1" },
+            [
+              _c("CardComponent", {
+                attrs: {
+                  title: product.title,
+                  desc: product.description,
+                  image_url: product.image_url,
+                  price: product.price
+                }
+              })
+            ],
+            1
+          )
+        }),
+        0
       )
     ],
     1
@@ -37572,15 +37548,13 @@ var render = function() {
     _c("div", { staticClass: "card-body" }, [
       _c("img", {
         staticClass: "card-img-top",
-        attrs: { src: "", alt: "Card image cap" }
+        attrs: { src: _vm.image_url, alt: "Card image cap" }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c("h4", { staticClass: "card-text" }, [
           _vm._v(_vm._s(_vm.title) + " ")
         ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "card-text" }, [_vm._v(_vm._s(_vm.desc) + " ")]),
         _vm._v(" "),
         _c("p", { staticClass: "card-text text-center" }, [
           _vm._v(_vm._s(_vm.price) + " ")
